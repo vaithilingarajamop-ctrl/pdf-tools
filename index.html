@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Tools — Internal Extensions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --ink: #1c1530;
+    --ink-soft: #4a4066;
+    --paper: #f7f5fb;
+    --card: #ffffff;
+    --line: #e2ddf0;
+    --plum: #5b2a86;
+    --plum-deep: #3d1a5e;
+    --teal: #0f8b7f;
+    --amber: #c47a1f;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 72px 0 48px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .kicker {
+    font-size: 14px;
+    color: var(--plum);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.1;
+    margin: 0 0 18px;
+    max-width: 11ch;
+  }
+
+  header p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0 0 8px;
+  }
+
+  .section-intro {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 32px;
+    max-width: 60ch;
+  }
+
+  .tools {
+    display: grid;
+    gap: 20px;
+  }
+
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .tool-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .tool:nth-child(1) .tool-mark { background: var(--plum); }
+  .tool:nth-child(2) .tool-mark { background: var(--teal); }
+
+  .tool h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .tool p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+  }
+
+  .btn:hover { opacity: 0.85; }
+
+  .btn-plum { background: var(--plum); color: white; }
+  .btn-teal { background: var(--teal); color: white; }
+
+  ol.steps {
+    margin: 0;
+    padding-left: 22px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  ol.steps li { margin-bottom: 10px; }
+  ol.steps li:last-child { margin-bottom: 0; }
+
+  ol.steps code {
+    background: #efeaf7;
+    color: var(--plum-deep);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+
+  .request-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .request-card p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 44ch;
+    margin: 0 auto 22px;
+  }
+
+  .btn-large {
+    padding: 13px 28px;
+    font-size: 15px;
+  }
+
+  .note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+
+  footer {
+    padding: 32px 0 60px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 32px; }
+    .tool { grid-template-columns: auto 1fr; }
+    .tool .btn { grid-column: 1 / -1; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="kicker">Mobius Internal Tools</div>
+    <h1>PDF tools, ready to install</h1>
+    <p>Two Chrome extensions for handling PDFs, spreadsheets, and Drive uploads without leaving the browser. Request access below, then install in under a minute.</p>
+  </header>
+
+  <section>
+    <h2>The tools</h2>
+    <p class="section-intro">Both are Chrome extensions you load manually — no Chrome Web Store listing yet, so a couple of extra steps are needed the first time.</p>
+    <div class="tools">
+      <div class="tool">
+        <div class="tool-mark">A</div>
+        <div>
+          <h3>Auto Upload to Drive</h3>
+          <p>Watches your downloads and pushes PDFs, spreadsheets, and ZIPs straight to Google Drive.</p>
+        </div>
+        <a class="btn btn-plum" href="drive-auto-upload.zip" download>Download .zip</a>
+      </div>
+      <div class="tool">
+        <div class="tool-mark">M</div>
+        <div>
+          <h3>PDF Merger</h3>
+          <p>Combine PDFs, convert Excel and Word files, and browse ZIP contents before uploading.</p>
+        </div>
+        <a class="btn btn-teal" href="pdf-merge-zip-upload.zip" download>Download .zip</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Install it</h2>
+    <p class="section-intro">Same steps for both extensions.</p>
+    <ol class="steps">
+      <li>Download the <code>.zip</code> above and unzip it anywhere on your computer.</li>
+      <li>Open <code>chrome://extensions</code> in Chrome.</li>
+      <li>Turn on <strong>Developer mode</strong>, top right.</li>
+      <li>Click <strong>Load unpacked</strong> and select the unzipped folder.</li>
+      <li>Open the extension and click <strong>Test Login</strong> to connect your Google account.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Request access</h2>
+    <p class="section-intro">Google login only works for approved accounts while these tools are in testing mode. Request access first — most requests are approved same-day.</p>
+    <div class="request-card">
+      <p>Fill in your name and the Google account email you'll sign in with. You'll get a message once you're approved and can log in.</p>
+      <a class="btn btn-plum btn-large" href="https://forms.gle/REPLACE_WITH_YOUR_FORM_LINK" target="_blank" rel="noopener">Request Access</a>
+      <div class="note">Approvals are handled by the team — usually within a business day.</div>
+    </div>
+  </section>
+
+  <footer>
+    Internal tools for Mobius. Questions go to your team lead.
+  </footer>
+</div>
+
+</body>
+</html>
