@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function valid(d) {
+      return d.keys().hasOnly(['name','date','bookNo','bookName','status','createdAt'])
+        && d.name is string && d.name.size() <= 100
+        && d.date is string && d.date.size() <= 10
+        && d.bookNo is string && d.bookNo.size() <= 100
+        && d.bookName is string && d.bookName.size() <= 100
+        && d.status in ['Pending','Completed']
+        && d.createdAt is number;
+    }
+
+    match /books/{id} {
+      allow read: if true;
+      allow create, update: if valid(request.resource.data);
+      allow delete: if true;
+    }
+  }
+}
